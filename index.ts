@@ -81,3 +81,5 @@ genericsFn(10);
 genericsFn([1, 2, 3]);
 
 var arr: string[] = [];
+arr = ["a", "b", "c"];
+console.log(arr.length);
