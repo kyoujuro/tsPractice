@@ -79,3 +79,5 @@ addAgeFn(99);
 genericsFn('Hello')
 genericsFn(10);
 genericsFn([1, 2, 3]);
+
+var arr: string[] = [];
