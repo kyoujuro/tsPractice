@@ -42,7 +42,7 @@ var Person = /** @class */ (function () {
         this.job = job;
     }
     Person.prototype.show = function () {
-        return this.job + " \u306F\u3000" + this.age + "\u3067\u3059\u3002";
+        return "".concat(this.job, " \u306F\u3000").concat(this.age, "\u3067\u3059\u3002");
     };
     return Person;
 }());
@@ -52,7 +52,7 @@ var BusinessPerson = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     BusinessPerson.prototype.work = function () {
-        return "\u4ED5\u4E8B\u306F" + this.job + "\u3067\u3059\u3002";
+        return "\u4ED5\u4E8B\u306F".concat(this.job, "\u3067\u3059\u3002");
     };
     return BusinessPerson;
 }(Person));
@@ -83,3 +83,28 @@ addAgeFn(99);
 genericsFn('Hello');
 genericsFn(10);
 genericsFn([1, 2, 3]);
+var arr = [];
+arr = ["a", "b", "c"];
+console.log(arr.length);
+arr.forEach(function (element) {
+    console.log(element);
+});
+var startNum = Math.random() * 3;
+console.log(startNum);
+var Corr = /** @class */ (function () {
+    function Corr(sum_x, arr_x) {
+        this.sum_x = sum_x;
+        this.arr_x = arr_x;
+    }
+    Corr.prototype.sum_X = function () {
+        var _this = this;
+        this.arr_x.forEach(function (element) {
+            _this.sum_x += element;
+        });
+        console.log(this.sum_x);
+    };
+    return Corr;
+}());
+var num1 = new Corr(10, [10, 20, 30, 40]);
+console.log(num1);
+console.log(num1.sum_X);

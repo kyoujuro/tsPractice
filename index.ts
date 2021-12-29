@@ -83,3 +83,37 @@ genericsFn([1, 2, 3]);
 var arr: string[] = [];
 arr = ["a", "b", "c"];
 console.log(arr.length);
+
+arr.forEach(element => {
+   console.log(element); 
+});
+let startNum: number = Math.random() * 3;
+console.log(startNum);
+
+interface StatisticsNum{
+    arr_x: number[];
+    arr_y: number[];
+    avg_x: number;
+    avg_y: number;
+}
+
+class Corr implements StatisticsNum{
+    arr_x: number[];
+    arr_y;
+    avg_x;
+    avg_y: number;
+    sum_x: number;
+    constructor(sum_x: number, arr_x: number[]){
+        this.sum_x = sum_x;
+        this.arr_x = arr_x;
+    }
+    sum_X(){
+        this.arr_x.forEach(element => {
+            this.sum_x += element;
+        });
+        console.log(this.sum_x);
+    }
+}
+const num1 = new Corr(10, [10, 20, 30, 40]);
+console.log(num1);
+console.log(num1.sum_X());
