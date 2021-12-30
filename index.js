@@ -107,4 +107,23 @@ var Corr = /** @class */ (function () {
 }());
 var num1 = new Corr(10, [10, 20, 30, 40]);
 console.log(num1);
-console.log(num1.sum_X);
+console.log(num1.sum_X());
+console.log(Math.floor(10.57));
+var string_arr = ['PHP', 'Java', 'Go', 'Rust'];
+console.log(string_arr[1]);
+var crr_number = [[10, 20], [30, 40], [50, 60]];
+console.log(crr_number[1][1]);
+crr_number.forEach(function (element) {
+    console.log(element[1]);
+});
+crr_number.push([40, 50]);
+console.log(crr_number);
+var Programming;
+(function (Programming) {
+    Programming[Programming["Java"] = 0] = "Java";
+    Programming[Programming["PHP"] = 1] = "PHP";
+    Programming[Programming["C"] = 2] = "C";
+    Programming[Programming["Typescript"] = 3] = "Typescript";
+})(Programming || (Programming = {}));
+var pro = Programming.PHP;
+console.log(pro.toString.length);

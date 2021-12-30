@@ -117,3 +117,23 @@ class Corr implements StatisticsNum{
 const num1 = new Corr(10, [10, 20, 30, 40]);
 console.log(num1);
 console.log(num1.sum_X());
+console.log(Math.floor(10.57));
+let string_arr: Array<string> = ['PHP', 'Java', 'Go', 'Rust'];
+console.log(string_arr[1]);
+let crr_number: number[][] = [[10, 20],[30, 40],[50, 60]];
+console.log(crr_number[1][1]);
+crr_number.forEach(element => {
+    console.log(element[1]);
+});
+crr_number.push([40, 50]);
+console.log(crr_number);
+
+enum Programming {
+    Java,
+    PHP,
+    C,
+    Typescript
+}
+
+let pro: Programming = Programming.PHP;
+console.log(pro.toString.length);
