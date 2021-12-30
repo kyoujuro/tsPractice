@@ -137,3 +137,21 @@ enum Programming {
 
 let pro: Programming = Programming.PHP;
 console.log(pro.toString.length);
+
+let triangle: (height: number, base: number) => number =
+    function(height: number, base: number): number {
+        return height * base / 2;
+    };
+console.log(triangle(4.5, 19));
+
+const relu = (x: number): number => {
+    if(x < 0) return 0;
+    else return x;
+}
+
+console.log(relu(-4));
+
+const sigmoid = (x: number): number => {
+    return (1 / (1 + Math.exp(x)));
+}
+console.log(sigmoid(0));

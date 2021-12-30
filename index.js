@@ -127,3 +127,18 @@ var Programming;
 })(Programming || (Programming = {}));
 var pro = Programming.PHP;
 console.log(pro.toString.length);
+var triangle = function (height, base) {
+    return height * base / 2;
+};
+console.log(triangle(4.5, 19));
+var relu = function (x) {
+    if (x < 0)
+        return 0;
+    else
+        return x;
+};
+console.log(relu(-4));
+var sigmoid = function (x) {
+    return (1 / (1 + Math.exp(x)));
+};
+console.log(sigmoid(0));
