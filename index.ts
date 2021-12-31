@@ -155,3 +155,21 @@ const sigmoid = (x: number): number => {
     return (1 / (1 + Math.exp(x)));
 }
 console.log(sigmoid(0));
+
+abstract class Food{
+    constructor(name: string, value: number){}
+    abstract isStock(): boolean;
+}
+
+class Vegetable extends Food{
+    value: number;
+    isStock(): boolean {
+        if(this.value != null){
+            return false;
+        }
+        return true;
+    }
+}
+
+var carrot: Vegetable = new Vegetable("carrot", 100);
+console.log(carrot.isStock());

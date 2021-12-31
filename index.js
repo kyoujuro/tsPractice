@@ -142,3 +142,23 @@ var sigmoid = function (x) {
     return (1 / (1 + Math.exp(x)));
 };
 console.log(sigmoid(0));
+var Food = /** @class */ (function () {
+    function Food(name, value) {
+    }
+    return Food;
+}());
+var Vegetable = /** @class */ (function (_super) {
+    __extends(Vegetable, _super);
+    function Vegetable() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Vegetable.prototype.isStock = function () {
+        if (this.value != null) {
+            return false;
+        }
+        return true;
+    };
+    return Vegetable;
+}(Food));
+var carrot = new Vegetable("carrot", 100);
+console.log(carrot.isStock());
