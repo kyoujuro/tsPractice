@@ -173,3 +173,10 @@ class Vegetable extends Food{
 
 var carrot: Vegetable = new Vegetable("carrot", 100);
 console.log(carrot.isStock());
+
+const reget = document.getElementById("regit")!;
+const p_text = document.createElement("p");
+p_text.textContent ="hello";
+reget?.append(p_text);
+
+window.addEventListener("click", () => console.log("clicked"));
