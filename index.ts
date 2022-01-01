@@ -28,7 +28,7 @@ console.log(Subject.Engilish);
 
 
 class Person {
-    private id: number;
+    private id!: number;
     protected job: string;
     age: number;
     constructor(job: string, age: number){
@@ -99,9 +99,9 @@ interface StatisticsNum{
 
 class Corr implements StatisticsNum{
     arr_x: number[];
-    arr_y;
-    avg_x;
-    avg_y: number;
+    arr_y!: number[];
+    avg_x!: number;
+    avg_y!: number;
     sum_x: number;
     constructor(sum_x: number, arr_x: number[]){
         this.sum_x = sum_x;
@@ -162,7 +162,7 @@ abstract class Food{
 }
 
 class Vegetable extends Food{
-    value: number;
+    value: number | undefined;
     isStock(): boolean {
         if(this.value != null){
             return false;
@@ -265,3 +265,5 @@ type ConditionalType ='Red' extends string ? number : boolean;
 
 type ConditionalTypeInfer = {'Red': 'Red'} extends {'Red': infer R }? R : boolean;
 
+type ConditionalTypeCheck<T> = T extends 'Red' ? number : boolean;
+let tmp: ConditionalTypeCheck<'Red' | 'Blue'>;
