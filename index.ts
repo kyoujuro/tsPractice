@@ -174,9 +174,18 @@ class Vegetable extends Food{
 var carrot: Vegetable = new Vegetable("carrot", 100);
 console.log(carrot.isStock());
 
-const reget = document.getElementById("regit")!;
-const p_text = document.createElement("p");
-p_text.textContent ="hello";
-reget?.append(p_text);
+// const reget = document.getElementById("regit")!;
+// const p_text = document.createElement("p");
+// p_text.textContent ="hello";
+// reget?.append(p_text);
 
-window.addEventListener("click", () => console.log("clicked"));
+// window.addEventListener("click", () => console.log("clicked"));
+
+
+function echo<T>(value: T): T{
+    return value;
+}
+
+console.log(echo<string>("hoge").toUpperCase());
+console.log(echo<string>("FOO").toLocaleLowerCase());
+console.log(echo<Array<number>>([10, 20, 30]));

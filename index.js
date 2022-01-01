@@ -162,8 +162,14 @@ var Vegetable = /** @class */ (function (_super) {
 }(Food));
 var carrot = new Vegetable("carrot", 100);
 console.log(carrot.isStock());
-var reget = document.getElementById("regit");
-var p_text = document.createElement("p");
-p_text.textContent = "hello";
-reget === null || reget === void 0 ? void 0 : reget.append(p_text);
-window.addEventListener("click", function () { return console.log("clicked"); });
+// const reget = document.getElementById("regit")!;
+// const p_text = document.createElement("p");
+// p_text.textContent ="hello";
+// reget?.append(p_text);
+// window.addEventListener("click", () => console.log("clicked"));
+function echo(value) {
+    return value;
+}
+console.log(echo("hoge").toUpperCase());
+console.log(echo("FOO").toLocaleLowerCase());
+console.log(echo([10, 20, 30]));
