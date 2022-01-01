@@ -219,3 +219,13 @@ databaseConnect.dataAdd('Red');
 databaseConnect.dataAdd('Yellow');
 databaseConnect.delete('Red');
 console.log(databaseConnect.dataGet());
+
+interface CountDatabase<T>{
+    id: number;
+    data: T[];
+}
+
+const countDatabase: CountDatabase<number> = {
+    id: 10,
+    data: [1, 3]
+}
