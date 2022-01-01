@@ -173,3 +173,33 @@ function echo(value) {
 console.log(echo("hoge").toUpperCase());
 console.log(echo("FOO").toLocaleLowerCase());
 console.log(echo([10, 20, 30]));
+console.log(echo({ name: "Hello" }).name.toLowerCase());
+function echoObject(value) {
+    return value;
+}
+console.log(echoObject({ name: "Good" }));
+function echoObjectKey(value, key) {
+    return value;
+}
+echoObjectKey({ name: "hoge", age: 39 }, 'age');
+console.log(echoObjectKey({ name: "hello", age: 45 }, 'age'));
+var DatabaseConnect = /** @class */ (function () {
+    function DatabaseConnect() {
+        this.data = [];
+    }
+    DatabaseConnect.prototype.dataAdd = function (item) {
+        this.data.push(item);
+    };
+    DatabaseConnect.prototype["delete"] = function (item) {
+        this.data.splice(this.data.indexOf(item), 1);
+    };
+    DatabaseConnect.prototype.dataGet = function () {
+        return this.data;
+    };
+    return DatabaseConnect;
+}());
+var databaseConnect = new DatabaseConnect();
+databaseConnect.dataAdd('Red');
+databaseConnect.dataAdd('Yellow');
+databaseConnect["delete"]('Red');
+console.log(databaseConnect.dataGet());

@@ -189,3 +189,33 @@ function echo<T>(value: T): T{
 console.log(echo<string>("hoge").toUpperCase());
 console.log(echo<string>("FOO").toLocaleLowerCase());
 console.log(echo<Array<number>>([10, 20, 30]));
+console.log(echo({name: "Hello"}).name.toLowerCase());
+
+function echoObject<T extends{name: string}>(value: T): T{
+    return value;
+}
+
+console.log(echoObject({name: "Good"}));
+function echoObjectKey<T extends{name: string}, U extends keyof T>(value: T, key: U): T{
+    return value;
+}
+echoObjectKey({name: "hoge", age: 39}, 'age');
+console.log(echoObjectKey({name: "hello", age: 45}, 'age'));
+
+class DatabaseConnect<T extends string | boolean |number>{
+    private data: T[] = [];
+    dataAdd(item: T){
+        this.data.push(item);
+    }
+    delete(item: T){
+        this.data.splice(this.data.indexOf(item), 1);
+    }
+    dataGet(){
+        return this.data;
+    }
+}
+const databaseConnect = new DatabaseConnect<string>();
+databaseConnect.dataAdd('Red');
+databaseConnect.dataAdd('Yellow');
+databaseConnect.delete('Red');
+console.log(databaseConnect.dataGet());
