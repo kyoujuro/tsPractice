@@ -1,4 +1,4 @@
-import { SelectionRange } from "typescript";
+import { isConditionalExpression, isConditionalTypeNode, SelectionRange } from "typescript";
 
 function addNum(num1: number, num2: number): number{
     alert(num1 + num2);
@@ -229,3 +229,39 @@ const countDatabase: CountDatabase<number> = {
     id: 10,
     data: [1, 3]
 }
+
+interface Todo{
+    title: string,
+    id: number
+}
+
+type TodoList = Readonly<Todo>;
+type TodoAdd = Partial<Todo>;
+const fetchData: Promise<string> = new Promise(resolve =>{
+    setTimeout(() => {
+        resolve('test');
+    }, 1000);
+})
+
+fetchData.then(data => {
+    console.log(data.toUpperCase());
+})
+
+interface ResponseAlert<T extends{ massage: string } = any>{
+    data: string,
+    code: number
+}
+let response: ResponseAlert;
+
+interface Colors{
+    'Red': string,
+    'Blue': string
+}
+type MappedTypes = {
+    readonly [P in keyof Colors]: string
+}
+
+type ConditionalType ='Red' extends string ? number : boolean;
+
+type ConditionalTypeInfer = {'Red': 'Red'} extends {'Red': infer R }? R : boolean;
+

@@ -203,3 +203,16 @@ databaseConnect.dataAdd('Red');
 databaseConnect.dataAdd('Yellow');
 databaseConnect["delete"]('Red');
 console.log(databaseConnect.dataGet());
+var countDatabase = {
+    id: 10,
+    data: [1, 3]
+};
+var fetchData = new Promise(function (resolve) {
+    setTimeout(function () {
+        resolve('test');
+    }, 1000);
+});
+fetchData.then(function (data) {
+    console.log(data.toUpperCase());
+});
+var response;
